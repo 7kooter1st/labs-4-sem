@@ -4,10 +4,11 @@
 <head>
   <title>Калькулятор</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
 </head>
 
 <body>
-    <button id="btn_theme" class="my-btn btn_theme"></button>
+    <button id="btn-theme" class="my-btn btn-theme">тема</button>
     <div class="background_image">
       <img src="polskaya-korova-264660843_orig_.gif">
     </div>
@@ -16,6 +17,9 @@
       0
     </div>
     <div>
+      <!-- <div>
+        <button id="SPV_button", class="my-btn secondary">spv</button>
+      </div> -->
       <div>  
         <button id="btn_op_clear" class="my-btn secondary">C</button>
         <button id="btn_op_sign" class="my-btn secondary">+/-</button>
@@ -50,9 +54,26 @@
         <button id="btn_op_equal" class="my-btn primary execute">=</button>
       </div>
     </div>
+
+    <div class="info">
+      <input id="info__body_1" class="info__switch" type="checkbox">
+      <label for="info__body_1" class="info__headline">Лр выполнил</label>
+      <div class="info__body">
+        студент группы РТ5-41 Гончаров М.А.
+      </div>
     </div>
-    <div id="title" class="title">
-      ЛР выполнил студент РТ5-41 Гончаров М.А.
+
+    <button onclick="window.location.href='https://github.com/7kooter1st/labs-4-sem';" class="my-btn btn-github">github</button>
+    <form>
+      <label for="select">Выберите вариант</label>
+      <select name="variants" id="select">
+        <option value="var1">Вариант 1</option>
+        <option value="var2">Вариант 2</option>
+      </select>
+    </form>
+    <div id="purpose" class="purpose">
+    Цель ЛР: <b>Знакомство</b> с инструментами построения пользовательских интерфейсов web-сайтов: <b>HTML</b>, <b>CSS</b>
+    </div>
     </div>
   </div>
 

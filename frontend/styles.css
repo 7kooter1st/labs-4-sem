@@ -25,12 +25,18 @@ h1 {
   width: 30em;
 }
 
-.background_image{
-  position: sticky;
-  background-size: cover;
-  margin-left: 400px;
-  top: 20px;
-  
+.background_image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: white;
+  z-index: -1;
+  width: 100em;
 }
 
 body{
@@ -64,7 +70,8 @@ body{
     filter: brightness(130%); /* увеличим интенсивность цвета для эффекта вспышки */
   }
   
-  .my-btn.btn_theme {
+  .my-btn.btn-theme {
+    font-size: 20px;
     position: fixed;
     text-decoration: none;
     color: #fff;
@@ -77,14 +84,18 @@ body{
     padding: 5px;
     width: 70px;
     height: 30px;
-    border-radius: 20px;
+    border-radius: 5px;
+  }
+
+  .my-btn.btn_theme:hover{
+    background-color: #f04c41;
   }
   /* селектор для кнопок первостепенных операций */
   .my-btn.primary { 
     background: #272727; /* цвет кнопки оранжевый */
   }
 
-  .my-btn.my-btn.primary.my-btn:hover {
+  .my-btn.primary:hover {
     background-color: lightslategray;
   }
   
@@ -118,18 +129,76 @@ body{
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  .title{
-    margin: auto;
-    color: black;
+
+  .my-btn.btn-github{
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    font-size: 30px;
+    background-color: red;
+    width: auto;
+    max-width: 100%;
+    height: auto;
   }
 
-  .polska_cow{
-    position: sticky;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: brown;
-    font-weight: 700;
+
+  body {
+    font-family: roboto, sans-serif;
+    font-size: 15px;
+  }
+  
+  .info {
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
     color: white;
-    margin-left: -30px;
+    background-color: #0f0f0f;
+    padding: 10px 25px;
+  }
+  
+  .info__switch {
+    display: none;
+  }
+  
+  .info__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s;
+  }
+  
+  .info__switch:checked~.info__body {
+    max-height: 100px;
+  }
+  
+  .info__headline::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 4px;
+    border: 6px solid white;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+  
+  .info__switch:checked~.info__headline::before {
+    transform: rotate(180deg) translateY(6px);
+  }
+  
+  .info__headline {
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+    user-select: none;
+    color: white;
+    font-weight: normal;
+    cursor: pointer;
+    width: 800px;
+  }
+  
+  .info__headline:hover {
+    text-decoration: underline;
+  }
+
+  .purpose {
+    padding-top: 10px;
+    color: white;
   }
